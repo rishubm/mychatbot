@@ -1,6 +1,13 @@
 version: "2.0"
 
 nlu:
+- intent: give_name
+  examples: |
+    - my name is
+    - the name i go by is
+    - my friends call me
+    - I am called
+    - The name is
 - intent: greet
   examples: |
     - hey
