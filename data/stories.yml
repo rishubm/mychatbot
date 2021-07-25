@@ -6,6 +6,10 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: give_name
+  - slot_was_set:
+    - PERSON: (PERSON)
+  - action: utter_ask_mood
   - intent: mood_great
   - action: utter_happy
 
@@ -13,6 +17,10 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: give_name
+  - slot_was_set:
+    - PERSON: (PERSON)
+  - action: utter_ask_mood
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
@@ -23,6 +31,10 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: give_name
+  - slot_was_set:
+    - PERSON: (PERSON)
+  - action: utter_ask_mood
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
