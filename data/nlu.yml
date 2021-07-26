@@ -105,3 +105,17 @@ nlu:
     - weather at
     - weather in
     - weather
+
+- intent: feedback
+  examples: |
+    - It’s very helpful
+    - I had the best experience speaking with you
+    - no feedback
+    - ok
+    - You are the most stupid bot I have ever seen
+    - the worst
+    - You suck
+    - You are average
+    - You are a decent bot
+    - I have seen better
+    - Bad performance

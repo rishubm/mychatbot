@@ -18,3 +18,8 @@ rules:
   - slot_was_set:
     - GPE: (GPE) 
   - action: action_weather
+
+- rule: Take user feedback
+  steps:
+  - intent: feedback
+  - action: action_feedback

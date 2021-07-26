@@ -10,6 +10,7 @@ intents:
   - bot_challenge
   - give_name
   - ask_weather
+  - feedback
 entities: 
 - PERSON
 - GPE
@@ -35,7 +36,7 @@ responses:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Great, carry on! And please leave feedback you have."
 
   utter_goodbye:
   - text: "Bye"
@@ -44,6 +45,7 @@ responses:
   - text: "I am a bot, powered by Rasa."
 actions:
   - action_weather
+  - action_feedback
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
