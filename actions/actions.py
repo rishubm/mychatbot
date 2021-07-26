@@ -7,10 +7,12 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-# from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List
 #
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
+from weather import Weather
 #
 #
 # class ActionHelloWorld(Action):
@@ -25,3 +27,17 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+class ActionHelloWorld(Action):
+
+    def name(self) -> Text:
+        return "action_weather"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        city = tracker.get_slot('GPE')
+        temperature=Weather(city)['temp']
+        response = "The current temperature at {} is {} degrees Celsius.".format(city,temperature)
+        dispatcher.utter_message(response)
+
+        return [SlotSet('GPE',city)]

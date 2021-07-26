@@ -11,3 +11,10 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Give weather update when asked by user
+  steps:
+  - intent: ask_weather
+  - slot_was_set:
+    - GPE: (GPE) 
+  - action: action_weather

@@ -97,3 +97,11 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: ask_weather
+  examples: |
+    - what is the weather in
+    - what's the weather in
+    - weather at
+    - weather in
+    - weather
